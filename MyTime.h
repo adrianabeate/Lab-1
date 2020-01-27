@@ -26,22 +26,22 @@ public:
 	return tmp;
     }
 
-    MyTime operator - (const MyTime& t1, const MyTime& t2)
+    MyTime MyTime::operator - (const MyTime& t1)const
     {MyTime tmp;
 
 	tmp.minutes = abs((t1.hours * 60 + t1.minutes) -
 
-		(t2.hours * 60 + t2.minutes));
+		(hours * 60 + minutes));
 
 	tmp.simplify();
 
 	return tmp;
     }
 
-    MyTime operator * (const MyTime& t1, int num)
+    MyTime MyTime::operator * (const int num)const
     {MyTime tmp;
 
-	tmp.minutes = t1.hours * 60 + t1.minutes;
+	tmp.minutes = hours * 60 + minutes;
 
 	tmp.minutes *= num;
 
@@ -50,10 +50,10 @@ public:
 	return tmp;
     }
 
-    MyTime operator / (const MyTime& t1, int num)
+    MyTime MyTime::operator / (const int num)const
     {	MyTime tmp;
 
-	tmp.minutes = t1.hours * 60 + t1.minutes;
+	tmp.minutes = hours * 60 + minutes;
 
 	tmp.minutes /= num;
 
