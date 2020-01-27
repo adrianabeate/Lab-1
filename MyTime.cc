@@ -96,3 +96,12 @@ istream& operator >> (istream& ins, MyTime& t1) {
 	t1.simplify();
 	return ins;
 }
+ std::istream& operator >>(std::istream& fin, MyTime& t){
+	 t.input(ins);
+	 return ins;
+ }
+	
+    std::ostream& operator <<(std::ostream& fout, const MyTime& t){
+	    t.output(ins);
+	    return ins;
+    }
